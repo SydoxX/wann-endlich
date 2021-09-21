@@ -20,8 +20,8 @@
 
     <script>
     function getNextPubDate() {
-        // Expected opening date (hopefully)
-        return new Date(2021, 9, 6, 18, 0, 0);
+        // Confirmed opening date
+        return new Date(2021, 8, 29, 18, 0, 0);
         //return new Date(Math.ceil(new Date().getTime() / 604800000) * 604800000 - 28800000);
     }
     // Set the date we're counting down to
@@ -46,8 +46,6 @@
         document.getElementById("demo").innerHTML = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
 
-        // I know that pubs are only open until 2200 but code will bug out if you check after 2200 on the same day.
-        // Figured at that time everybody will be too drunk to check anyway.
         if (now.getDay() === countDownDate.getDay() && now.getHours() >= 18) {
             clearInterval(x);
             document.getElementById("demo").innerHTML = "jedzt, wia san scho am flippsn!1";
